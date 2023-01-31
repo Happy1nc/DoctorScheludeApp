@@ -1,0 +1,24 @@
+﻿<Window x:Class="DoctorScheludeApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoctorScheludeApp"
+        mc:Ignorable="d"
+        Title="Запись на прием" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Специализация:" Style="{StaticResource BlockCommon}" Width="auto"/>
+            <ComboBox Name="ComboSpecialisation" DisplayMemberPath="Name" SelectionChanged="ComboSpecialisation_SelectionChanged"/>
+            <TextBlock Text="Врач:" Style="{StaticResource BlockCommon}" Width="auto" Margin="40 5 5 5"/>
+            <ComboBox Name="ComboDoctor" DisplayMemberPath="FullName" SelectionChanged="ComboDoctor_SelectionChanged"/>
+        </StackPanel>
+        <DataGrid x:Name="DGridSchedule" Grid.Row="1" SelectionUnit="Cell">
+            
+        </DataGrid>
+    </Grid>
+</Window>
